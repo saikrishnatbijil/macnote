@@ -18,10 +18,13 @@ function addNote() {
   // console.log(currentID)
   const newObj = { id: currentID++, note: "", heading: "Untitled" };
   userNotes.push(newObj);
-  currentID + localStorage.setItem("currentID", JSON.stringify(currentID));
+  currentID+ 
+  localStorage.setItem("currentID", JSON.stringify(currentID));
   // console.log(userNotes)
   localStorage.setItem("userNotes", JSON.stringify(userNotes));
   updateList();
+  updateNote(currentID - 1);
+  drawer.classList.toggle("open");
 }
 
 function updateNote(id) {
